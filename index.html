@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#070b26">
+  <title>Misión Cristal Azul · Demo interactivo</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="config.js"></script>
+  <script src="lib/qrcode.js"></script>
+  <script src="lib/qrcode_UTF8.js"></script>
+  <script type="importmap">
+    { "imports": { "three": "./lib/three.module.js", "three/addons/": "./lib/addons/" } }
+  </script>
+</head>
+<body>
+  <div id="vr"></div>
+
+  <!-- Inicio -->
+  <section id="intro" class="capa">
+    <div class="intro-caja">
+      <div class="logos-intro">
+        <img id="intro-logo-inst" alt="">
+        <span class="mas">+</span>
+        <img id="intro-logo-patro" alt="">
+      </div>
+      <p class="sobre">Feria de ciencia · Demo interactivo</p>
+      <h1 id="intro-titulo">Misión Cristal Azul</h1>
+      <p class="bajada">Tomas el rol de científico en el laboratorio. Una muestra de cristal azul se está volviendo inestable y necesitas herramientas que no tienes… pero llegan a la puerta en segundos.</p>
+      <ol class="pasos">
+        <li><span>1</span><div><b>Encuentra la piedra azul</b><small>y llévala al laboratorio inclinando el celular</small></div></li>
+        <li><span>2</span><div><b>Pide herramientas</b><small>en la tienda del computador y recíbelas en la puerta</small></div></li>
+        <li><span>3</span><div><b>Estabiliza el cristal</b><small>antes de que se acabe el tiempo</small></div></li>
+        <li><span>4</span><div><b>Atrapa lo que salga</b><small>y construye la cápsula de contención</small></div></li>
+      </ol>
+      <button id="btn-comenzar" class="btn jugar">Comenzar misión</button>
+      <button id="btn-ar" class="btn secundario oculto">Empezar en realidad aumentada</button>
+      <p class="nota">Usa el celular en vertical · Mejor con sonido</p>
+    </div>
+  </section>
+
+  <!-- HUD -->
+  <header id="hud" class="oculto">
+    <div class="progreso"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="hud-fila">
+      <span id="hud-etapa"></span>
+      <span id="hud-info"></span>
+    </div>
+  </header>
+  <div id="inventario" class="oculto"></div>
+  <div id="pedido" class="oculto"><span class="ml-mini">📦</span><div><b id="pedido-nombre"></b><small id="pedido-tiempo"></small></div><i id="pedido-barra"></i></div>
+  <div id="medidor" class="oculto"><span id="medidor-txt">Estabilidad</span><div class="barra"><i id="medidor-barra"></i></div></div>
+  <div id="mantener" class="oculto"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/><circle id="mantener-arco" cx="20" cy="20" r="16"/></svg></div>
+
+  <button id="btn-sonido" class="oculto" aria-label="Sonido">🔊</button>
+  <div id="flecha-izq" class="flecha oculto">‹</div>
+  <div id="flecha-der" class="flecha oculto">›</div>
+  <div id="toast" class="oculto"></div>
+  <div id="destello"></div>
+
+  <!-- Tienda -->
+  <section id="tienda" class="oculto"></section>
+
+  <!-- Tarjeta -->
+  <section id="tarjeta" class="capa oculto">
+    <div class="tarjeta-caja">
+      <p class="sobre" id="tarjeta-sobre"></p>
+      <h2 id="tarjeta-titulo"></h2>
+      <div id="tarjeta-texto"></div>
+      <button id="tarjeta-btn" class="btn primario">Listo</button>
+    </div>
+  </section>
+
+  <!-- AR -->
+  <div id="ar-capa" class="oculto">
+    <p id="ar-texto">Mueve el celular apuntando al piso</p>
+    <button id="ar-salir" class="btn secundario">Salir de AR</button>
+  </div>
+
+  <div id="transicion" class="oculto"><p id="transicion-texto"></p></div>
+
+  <!-- Final -->
+  <section id="final" class="capa oculto">
+    <div class="final-caja">
+      <div class="logos-final"><img id="fin-logo-inst" alt=""><img id="fin-logo-patro" alt=""></div>
+      <h2 id="fin-titulo"></h2>
+      <p id="fin-mensaje"></p>
+      <div id="fin-qr-cont" class="oculto"><div id="fin-qr"></div></div>
+      <p id="fin-contacto"></p>
+      <ul id="fin-resumen"></ul>
+      <div class="final-botones">
+        <button id="fin-explorar" class="btn secundario">Seguir explorando</button>
+        <button id="fin-repetir" class="btn primario">Repetir</button>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
