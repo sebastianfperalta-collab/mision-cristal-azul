@@ -28,7 +28,7 @@ window.DEMO_CONFIG = {
   final: {
     titulo: "Misión cumplida",
     mensaje: "Con buena ciencia, buenas herramientas y entregas a tiempo, cualquier descubrimiento es posible.",
-    contacto: "Escribe aquí tu nombre y tu número de contacto",
+    contacto: "",
     qr: ""   // enlace para el QR (vacío = sin QR)
   }
 };
